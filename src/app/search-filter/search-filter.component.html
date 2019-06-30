@@ -1,28 +1,30 @@
 <div class="container">
   <div class="row">
-    <div class="search-hero">
+    <div class="search-hero mb-2">
       <input
         class="form-control"
         type="text"
         name="search"
         [(ngModel)]="searchText"
         autocomplete="off"
-        placeholder="&#61442;  Start searching for a hero by id or name or country"
+        placeholder="Lancer la recherche"
       />
     </div>
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Id</th>
-          <th>Hero Name</th>
-          <th>Country</th>
+          <th>Nom</th>
+          <th>Nom d'utilisateur</th>
+          <th>email</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let hero of heroes | filter: searchText">
-          <td>{{ hero.id }}</td>
-          <td>{{ hero.name }}</td>
-          <td>{{ hero.country }}</td>
+        <tr *ngFor="let user of users | filter: searchText">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
         </tr>
       </tbody>
     </table>
